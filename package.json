@@ -1,0 +1,19 @@
+{
+  "name": "codroipo-virtual-assistant",
+  "version": "1.0.0",
+  "description": "Prototipo di assistente virtuale per il Comune di Codroipo.",
+  "scripts": {
+    "scrape": "node -r ts-node/register --watch ./src/scripts/scrape.ts"
+  },
+  "author": "Lorenzo Lucchesi",
+  "dependencies": {
+    "puppeteer": "^24.26.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "ts-node": "^10.9.2",
+    "ts-patch": "^3.3.0",
+    "typescript": "^5.9.3",
+    "typescript-transform-paths": "^3.5.5"
+  }
+}
