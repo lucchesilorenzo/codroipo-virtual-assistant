@@ -1,7 +1,9 @@
 import { buildCartaIdentitaElettronicaFAQ } from "@/scripts/faq-builders/build-cie-faq";
 import { buildAccessoSempliceCivileFAQ } from "../faq-builders/build-accesso-semplice-civile-faq";
+import { buildAvvisoDiAccertamentoFAQ } from "../faq-builders/build-avviso-di-accertamento-faq";
 import { buildCambioNomeECognomeFAQ } from "../faq-builders/build-cambio-nome-e-cognome-faq";
 import { scrapeAccessoSempliceCivile } from "./scrape-accesso-semplice-civile";
+import { scrapeAvvisoDiAccertamento } from "./scrape-avviso-di-accertamento";
 import { scrapeCambioNomeECognome } from "./scrape-cambio-nome-e-cognome";
 import { scrapeCIE } from "./scrape-cie";
 
@@ -17,5 +19,9 @@ export const services = [
   {
     service: scrapeAccessoSempliceCivile,
     buildFaq: buildAccessoSempliceCivileFAQ,
+  },
+  {
+    service: scrapeAvvisoDiAccertamento,
+    buildFaq: buildAvvisoDiAccertamentoFAQ,
   },
 ];
