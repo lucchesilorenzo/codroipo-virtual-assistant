@@ -8,8 +8,7 @@ export async function buildCartaIdentitaElettronicaFAQ(
 
   if (cie.descrizione) {
     faq.push({
-      domanda:
-        "Potresti fornire una breve descrizione della Carta Identità Elettronica (C.I.E. - CIE)?",
+      domanda: `Potresti fornire una breve descrizione della ${cie.servizio}?`,
       risposta: cie.descrizione,
     });
   }
@@ -23,14 +22,14 @@ export async function buildCartaIdentitaElettronicaFAQ(
 
   if (cie.cosaServe?.requisiti) {
     faq.push({
-      domanda: "Cosa serve per richiederla?",
+      domanda: `Cosa serve per richiedere la ${cie.servizio}?`,
       risposta: cie.cosaServe.requisiti.join(" "),
     });
   }
 
   if (cie.cosaServe?.infoAggiuntive) {
     faq.push({
-      domanda: "Ci sono informazioni aggiuntive?",
+      domanda: `Ci sono informazioni aggiuntive per la ${cie.servizio}?`,
       risposta: cie.cosaServe.infoAggiuntive,
     });
   }
@@ -44,49 +43,49 @@ export async function buildCartaIdentitaElettronicaFAQ(
 
   if (cie.quantoCosta) {
     faq.push({
-      domanda: "Quanto costa?",
+      domanda: `Quanto costa la ${cie.servizio}?`,
       risposta: cie.quantoCosta,
     });
   }
 
   if (cie.tempiEScadenze) {
     faq.push({
-      domanda: "Quali sono i tempi di rilascio?",
+      domanda: `Quali sono i tempi di rilascio per la ${cie.servizio}?`,
       risposta: cie.tempiEScadenze,
     });
   }
 
   if (cie.contatti?.sportello) {
     faq.push({
-      domanda: "Dove si trova lo sportello?",
+      domanda: `Dove si trova lo sportello per la ${cie.servizio}?`,
       risposta: cie.contatti.sportello,
     });
   }
 
   if (cie.contatti?.telefono) {
     faq.push({
-      domanda: "Qual è il numero di telefono per informazioni?",
+      domanda: `Qual è il numero di telefono per avere piu' informazioni sulla ${cie.servizio}?`,
       risposta: cie.contatti.telefono,
     });
   }
 
   if (cie.contatti?.pec) {
     faq.push({
-      domanda: "Qual è l'indirizzo PEC del Comune?",
+      domanda: `Qual è l'indirizzo PEC del Comune per la ${cie.servizio}?`,
       risposta: cie.contatti.pec,
     });
   }
 
   if (cie.contatti?.aperturaAlPubblico) {
     faq.push({
-      domanda: "Quali sono gli orari di apertura al pubblico?",
+      domanda: `Quali sono gli orari di apertura al pubblico per la ${cie.servizio}?`,
       risposta: cie.contatti.aperturaAlPubblico,
     });
   }
 
   if (cie.contatti?.aperturaSuAppuntamento) {
     faq.push({
-      domanda: "Quali sono gli orari su appuntamento?",
+      domanda: `Quali sono gli orari su appuntamento per la ${cie.servizio}?`,
       risposta: cie.contatti.aperturaSuAppuntamento,
     });
   }
