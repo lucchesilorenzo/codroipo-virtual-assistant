@@ -72,13 +72,9 @@ export async function scrapeCIE() {
     }
 
     // Quanto costa
-    const costoDiv = Array.from(document.querySelectorAll("div")).find(
-      (div) =>
-        div.textContent.startsWith("Euro") &&
-        div.textContent.endsWith("cartacea")
-    );
-
-    const quantoCosta = costoDiv ? cleanText(costoDiv.textContent) : null;
+    const quantoCosta =
+      cleanText(document.querySelector("#pr_quantoCosta + div")?.textContent) ||
+      null;
 
     // Tempi e scadenze
     const tempiEScadenze =

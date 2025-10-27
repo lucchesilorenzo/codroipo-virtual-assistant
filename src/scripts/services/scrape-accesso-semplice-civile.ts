@@ -52,13 +52,10 @@ export async function scrapeAccessoSempliceCivile() {
         ) || null;
 
       // Quanto costa
-      const costoDiv = Array.from(document.querySelectorAll("div")).find(
-        (div) =>
-          div.textContent.startsWith("Non") &&
-          div.textContent.endsWith("istanza")
-      );
-
-      const quantoCosta = costoDiv ? cleanText(costoDiv.textContent) : null;
+      const quantoCosta =
+        cleanText(
+          document.querySelector("#pr_quantoCosta + div > p")?.textContent
+        ) || null;
 
       // Tempi e scadenze
       const tempiEScadenze =

@@ -2,56 +2,56 @@ import { AccessoSempliceCivile } from "@/types/accesso-semplice-civile";
 import { createJSON } from "@/utils/create-json";
 
 export async function buildAccessoSempliceCivileFAQ(
-  cambioNomeECognome: AccessoSempliceCivile
+  accessoSempliceCivile: AccessoSempliceCivile
 ) {
   const faq = [];
 
-  if (cambioNomeECognome.descrizione) {
+  if (accessoSempliceCivile.descrizione) {
     faq.push({
-      domanda: `Potresti fornire una breve descrizione del ${cambioNomeECognome.servizio}?`,
-      risposta: cambioNomeECognome.descrizione,
+      domanda: `Potresti fornire una breve descrizione sull'${accessoSempliceCivile.servizio}?`,
+      risposta: accessoSempliceCivile.descrizione,
     });
   }
 
-  if (cambioNomeECognome.comeFare) {
+  if (accessoSempliceCivile.comeFare) {
     faq.push({
-      domanda: `Come posso richiedere il ${cambioNomeECognome.servizio}?`,
-      risposta: cambioNomeECognome.comeFare,
+      domanda: `Come posso richiedere l'${accessoSempliceCivile.servizio}?`,
+      risposta: accessoSempliceCivile.comeFare,
     });
   }
 
-  if (cambioNomeECognome.quantoCosta) {
+  if (accessoSempliceCivile.quantoCosta) {
     faq.push({
-      domanda: `Quanto costa il ${cambioNomeECognome.servizio}?`,
-      risposta: cambioNomeECognome.quantoCosta,
+      domanda: `Quanto costa l'${accessoSempliceCivile.servizio}?`,
+      risposta: accessoSempliceCivile.quantoCosta,
     });
   }
 
-  if (cambioNomeECognome.tempiEScadenze) {
+  if (accessoSempliceCivile.tempiEScadenze) {
     faq.push({
-      domanda: `Quali sono i tempi di rilascio del ${cambioNomeECognome.servizio}?`,
-      risposta: cambioNomeECognome.tempiEScadenze,
+      domanda: `Quali sono i tempi di rilascio dell'${accessoSempliceCivile.servizio}?`,
+      risposta: accessoSempliceCivile.tempiEScadenze,
     });
   }
 
-  if (cambioNomeECognome.contatti?.telefono) {
+  if (accessoSempliceCivile.contatti?.telefono) {
     faq.push({
-      domanda: `Qual è il numero di telefono per avere più informazioni sul ${cambioNomeECognome.servizio}?`,
-      risposta: cambioNomeECognome.contatti.telefono,
+      domanda: `Qual è il numero di telefono per avere più informazioni sull'${accessoSempliceCivile.servizio}?`,
+      risposta: accessoSempliceCivile.contatti.telefono,
     });
   }
 
-  if (cambioNomeECognome.contatti?.aperturaAlPubblico) {
+  if (accessoSempliceCivile.contatti?.aperturaAlPubblico) {
     faq.push({
-      domanda: `Quali sono gli orari di apertura al pubblico per il ${cambioNomeECognome.servizio}?`,
-      risposta: cambioNomeECognome.contatti.aperturaAlPubblico,
+      domanda: `Quali sono gli orari di apertura al pubblico per l'${accessoSempliceCivile.servizio}?`,
+      risposta: accessoSempliceCivile.contatti.aperturaAlPubblico,
     });
   }
 
-  if (cambioNomeECognome.contatti?.aperturaSuAppuntamento) {
+  if (accessoSempliceCivile.contatti?.aperturaSuAppuntamento) {
     faq.push({
-      domanda: `Quali sono gli orari su appuntamento per il ${cambioNomeECognome.servizio}?`,
-      risposta: cambioNomeECognome.contatti.aperturaSuAppuntamento,
+      domanda: `Quali sono gli orari su appuntamento per l'${accessoSempliceCivile.servizio}?`,
+      risposta: accessoSempliceCivile.contatti.aperturaSuAppuntamento,
     });
   }
 
