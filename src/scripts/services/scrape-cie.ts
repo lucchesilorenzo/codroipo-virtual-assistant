@@ -1,7 +1,8 @@
-import fs from "fs/promises";
+import { CartaIdentitaElettronica } from "@/types/carta-identita-elettronica";
+import { createJSON } from "@/utils/create-json";
 import puppeteer from "puppeteer";
 
-async function scrape() {
+export async function scrapeCIE() {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
@@ -10,7 +11,7 @@ async function scrape() {
 
   await page.goto(url);
 
-  const cie = await page.evaluate(() => {
+  const cie: CartaIdentitaElettronica = await page.evaluate(() => {
     function cleanText(text?: string | null) {
       if (!text) return null;
 
@@ -37,10 +38,10 @@ async function scrape() {
 
     let comeFare = null;
     if (comeFareEl) {
-      const parti = Array.from(comeFareEl.querySelectorAll("p")).map((p) =>
+      const parts = Array.from(comeFareEl.querySelectorAll("p")).map((p) =>
         cleanText(p.textContent)
       );
-      comeFare = parti.join("\n");
+      comeFare = parts.join("\n");
     }
 
     // Cosa serve
@@ -173,92 +174,8 @@ async function scrape() {
     };
   });
 
-  await fs.writeFile(
-    "./src/data/carta-identita-elettronica.json",
-    JSON.stringify(cie, null, 2)
-  );
-
-  const faq = [];
-
-  if (cie.descrizione)
-    faq.push({
-      domanda:
-        "Potresti fornire una breve descrizione della Carta Identità Elettronica (C.I.E. - CIE)?",
-      risposta: cie.descrizione,
-    });
-
-  if (cie.comeFare)
-    faq.push({
-      domanda: `Come posso richiedere la ${cie.servizio}?`,
-      risposta: cie.comeFare,
-    });
-
-  if (cie.cosaServe?.requisiti)
-    faq.push({
-      domanda: "Cosa serve per richiederla?",
-      risposta: cie.cosaServe.requisiti.join(" "),
-    });
-
-  if (cie.cosaServe?.infoAggiuntive)
-    faq.push({
-      domanda: "Ci sono informazioni aggiuntive?",
-      risposta: cie.cosaServe.infoAggiuntive,
-    });
-
-  if (cie.cosaServe?.validita)
-    faq.push({
-      domanda: `Qual è la validità della ${cie.servizio}?`,
-      risposta: cie.cosaServe.validita.join(" "),
-    });
-
-  if (cie.quantoCosta)
-    faq.push({
-      domanda: "Quanto costa?",
-      risposta: cie.quantoCosta,
-    });
-
-  if (cie.tempiEScadenze)
-    faq.push({
-      domanda: "Quali sono i tempi di rilascio?",
-      risposta: cie.tempiEScadenze,
-    });
-
-  if (cie.contatti?.sportello)
-    faq.push({
-      domanda: "Dove si trova lo sportello?",
-      risposta: cie.contatti.sportello,
-    });
-
-  if (cie.contatti?.telefono)
-    faq.push({
-      domanda: "Qual è il numero di telefono per informazioni?",
-      risposta: cie.contatti.telefono,
-    });
-
-  if (cie.contatti?.pec)
-    faq.push({
-      domanda: "Qual è l'indirizzo PEC del Comune?",
-      risposta: cie.contatti.pec,
-    });
-
-  if (cie.contatti?.aperturaAlPubblico)
-    faq.push({
-      domanda: "Quali sono gli orari di apertura al pubblico?",
-      risposta: cie.contatti.aperturaAlPubblico,
-    });
-
-  if (cie.contatti?.aperturaSuAppuntamento)
-    faq.push({
-      domanda: "Quali sono gli orari su appuntamento?",
-      risposta: cie.contatti.aperturaSuAppuntamento,
-    });
-
-  await fs.writeFile(
-    "./src/data/carta-identita-elettronica-faq.json",
-    JSON.stringify(faq, null, 2)
-  );
-
+  await createJSON(cie, "./src/data/services", "carta-identita-elettronica");
   await browser.close();
-}
 
-scrape();
+  return cie;
+}
