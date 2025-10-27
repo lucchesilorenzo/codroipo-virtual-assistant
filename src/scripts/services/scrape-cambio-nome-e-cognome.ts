@@ -1,0 +1,126 @@
+import { CambioNomeECognome } from "@/types/cambio-nome-e-cognome";
+import { createJSON } from "@/utils/create-json";
+import puppeteer from "puppeteer";
+
+export async function scrapeCambioNomeECognome() {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+
+  const url =
+    "https://www.comune.codroipo.ud.it/it/servizi-224003/cambio-di-nome-eo-cognome-241628";
+
+  await page.goto(url);
+
+  const cambioNomeECognome: CambioNomeECognome = await page.evaluate(() => {
+    function cleanText(text?: string | null) {
+      if (!text) return null;
+
+      return text.replace(/\u00A0/g, " ").trim();
+    }
+
+    // Servizio
+    const servizio =
+      cleanText(
+        document.querySelector('[data-element="service-title"]')?.textContent
+      ) || null;
+
+    // Descrizione
+    const descrizione =
+      cleanText(
+        document.querySelector('[data-element="service-description"]')
+          ?.textContent
+      ) || null;
+
+    // Come fare
+    const comeFare =
+      cleanText(
+        document.querySelector(
+          '[data-element="service-how-to"] > p:nth-of-type(1)'
+        )?.textContent
+      ) || null;
+
+    // Cosa serve
+    const cosaServe =
+      cleanText(
+        document.querySelector(
+          '[data-element="service-needed"] > div > p:nth-of-type(1)'
+        )?.textContent
+      ) || null;
+
+    // Quanto costa
+    const costoDiv = Array.from(document.querySelectorAll("div")).find(
+      (div) =>
+        div.textContent.startsWith("nessun") &&
+        div.textContent.endsWith("previsto")
+    );
+
+    const quantoCosta = costoDiv ? cleanText(costoDiv.textContent) : null;
+
+    // Tempi e scadenze
+    const tempiEScadenze =
+      cleanText(
+        document.querySelector(".calendar-date-description-content > div")
+          ?.textContent
+      ) || null;
+
+    // Contatti
+    let contatti = null;
+
+    const telefono =
+      document.querySelector("#contatti p.text-ellips-custom.mt-0.mb-2 > a")
+        ?.textContent || null;
+
+    const aperturaPubblicaEl = Array.from(
+      document.querySelectorAll("div.my-1")
+    ).find((div) =>
+      div.querySelector("strong")?.textContent.includes("Apertura al pubblico")
+    );
+
+    let aperturaAlPubblico = null;
+    if (aperturaPubblicaEl) {
+      const spans = Array.from(aperturaPubblicaEl.querySelectorAll("span"));
+      aperturaAlPubblico = spans
+        .map((span) => cleanText(span.textContent))
+        .join(" ");
+    }
+
+    const aperturaAppuntamentoEl = Array.from(
+      document.querySelectorAll("div.my-1")
+    ).find((div) =>
+      div.querySelector("strong")?.textContent.includes("Su appuntamento")
+    );
+
+    let aperturaSuAppuntamento = null;
+    if (aperturaAppuntamentoEl) {
+      const spans = Array.from(aperturaAppuntamentoEl.querySelectorAll("span"));
+      aperturaSuAppuntamento = spans
+        .map((span) => cleanText(span.textContent))
+        .join(" ");
+    }
+
+    contatti = {
+      telefono,
+      aperturaAlPubblico,
+      aperturaSuAppuntamento,
+    };
+
+    return {
+      servizio,
+      descrizione,
+      comeFare,
+      cosaServe,
+      quantoCosta,
+      tempiEScadenze,
+      contatti,
+    };
+  });
+
+  await createJSON(
+    cambioNomeECognome,
+    "./src/data/services",
+    "cambio-nome-e-cognome"
+  );
+  await browser.close();
+
+  return cambioNomeECognome;
+}
