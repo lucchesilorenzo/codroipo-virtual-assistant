@@ -1,7 +1,7 @@
 {
   "name": "codroipo-virtual-assistant",
   "version": "1.0.0",
-  "description": "Prototipo di assistente virtuale per il Comune di Codroipo.",
+  "description": "Prototipo di un assistente virtuale per il Comune di Codroipo.",
   "scripts": {
     "scrape": "node -r ts-node/register --watch ./src/scripts/index.ts"
   },
