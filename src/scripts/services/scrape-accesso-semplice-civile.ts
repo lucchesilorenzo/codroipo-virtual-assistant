@@ -1,0 +1,135 @@
+import { AccessoSempliceCivile } from "@/types/accesso-semplice-civile";
+import { createJSON } from "@/utils/create-json";
+import puppeteer from "puppeteer";
+
+export async function scrapeAccessoSempliceCivile() {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+
+  const url =
+    "https://www.comune.codroipo.ud.it/it/servizi-224003/accesso-civico-semplice-241660";
+
+  await page.goto(url);
+
+  const accessoSempliceCivile: AccessoSempliceCivile = await page.evaluate(
+    () => {
+      function cleanText(text?: string | null) {
+        if (!text) return null;
+
+        return text
+          .replace(/\u00A0/g, " ")
+          .replace(/\u2019/g, "'")
+          .trim();
+      }
+
+      // Servizio
+      const servizio =
+        cleanText(
+          document.querySelector('[data-element="service-title"]')?.textContent
+        ) || null;
+
+      // Descrizione
+      const descrizione =
+        cleanText(
+          document.querySelector('[data-element="service-description"]')
+            ?.textContent
+        ) || null;
+
+      // Come fare
+      const comeFare =
+        cleanText(
+          document.querySelector(
+            '[data-element="service-how-to"] > p:nth-of-type(1)'
+          )?.textContent
+        ) || null;
+
+      // Cosa serve
+      const cosaServe =
+        cleanText(
+          document.querySelector(
+            '[data-element="service-needed"] > div > p:nth-of-type(1)'
+          )?.textContent
+        ) || null;
+
+      // Quanto costa
+      const costoDiv = Array.from(document.querySelectorAll("div")).find(
+        (div) =>
+          div.textContent.startsWith("Non") &&
+          div.textContent.endsWith("istanza")
+      );
+
+      const quantoCosta = costoDiv ? cleanText(costoDiv.textContent) : null;
+
+      // Tempi e scadenze
+      const tempiEScadenze =
+        cleanText(
+          document.querySelector(".calendar-date-description-content > div")
+            ?.textContent
+        ) || null;
+
+      // Contatti
+      let contatti = null;
+
+      const telefono =
+        document.querySelector("#contatti p.text-ellips-custom.mt-0.mb-2 > a")
+          ?.textContent || null;
+
+      const aperturaPubblicaEl = Array.from(
+        document.querySelectorAll("div.my-1")
+      ).find((div) =>
+        div
+          .querySelector("strong")
+          ?.textContent.includes("Apertura al pubblico")
+      );
+
+      let aperturaAlPubblico = null;
+      if (aperturaPubblicaEl) {
+        const spans = Array.from(aperturaPubblicaEl.querySelectorAll("span"));
+        aperturaAlPubblico = spans
+          .map((span) => cleanText(span.textContent))
+          .join(" ");
+      }
+
+      const aperturaAppuntamentoEl = Array.from(
+        document.querySelectorAll("div.my-1")
+      ).find((div) =>
+        div.querySelector("strong")?.textContent.includes("Su appuntamento")
+      );
+
+      let aperturaSuAppuntamento = null;
+      if (aperturaAppuntamentoEl) {
+        const spans = Array.from(
+          aperturaAppuntamentoEl.querySelectorAll("span")
+        );
+        aperturaSuAppuntamento = spans
+          .map((span) => cleanText(span.textContent))
+          .join(" ");
+      }
+
+      contatti = {
+        telefono,
+        aperturaAlPubblico,
+        aperturaSuAppuntamento,
+      };
+
+      return {
+        servizio,
+        descrizione,
+        comeFare,
+        cosaServe,
+        quantoCosta,
+        tempiEScadenze,
+        contatti,
+      };
+    }
+  );
+
+  await createJSON(
+    accessoSempliceCivile,
+    "./src/data/services",
+    "accesso-semplice-civile"
+  );
+  await browser.close();
+
+  return accessoSempliceCivile;
+}
