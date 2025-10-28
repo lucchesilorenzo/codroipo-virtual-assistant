@@ -1,4 +1,4 @@
-export type AccessoSempliceCivile = {
+export type AccessoCivicoSemplice = {
   servizio: string | null;
   descrizione: string | null;
   comeFare: string | null;

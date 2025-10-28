@@ -1,8 +1,8 @@
-import { AccessoSempliceCivile } from "@/types/accesso-semplice-civile";
+import { AccessoCivicoSemplice } from "@/types/accesso-civico-semplice";
 import { createJSON } from "@/utils/create-json";
 import puppeteer from "puppeteer";
 
-export async function scrapeAccessoSempliceCivile() {
+export async function scrapeAccessoCivicoSemplice() {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
@@ -11,7 +11,7 @@ export async function scrapeAccessoSempliceCivile() {
 
   await page.goto(url);
 
-  const accessoSempliceCivile: AccessoSempliceCivile = await page.evaluate(
+  const accessoCivicoSemplice: AccessoCivicoSemplice = await page.evaluate(
     () => {
       function cleanText(text?: string | null) {
         if (!text) return null;
@@ -117,11 +117,11 @@ export async function scrapeAccessoSempliceCivile() {
   );
 
   await createJSON(
-    accessoSempliceCivile,
+    accessoCivicoSemplice,
     "./src/data/services",
-    "accesso-semplice-civile"
+    "accesso-civico-semplice"
   );
   await browser.close();
 
-  return accessoSempliceCivile;
+  return accessoCivicoSemplice;
 }
