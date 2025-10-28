@@ -19,17 +19,15 @@ export async function scrapeCIE() {
     }
 
     // Servizio
-    const servizio =
-      cleanText(
-        document.querySelector('[data-element="service-title"]')?.textContent
-      ) || null;
+    const servizio = cleanText(
+      document.querySelector('[data-element="service-title"]')?.textContent
+    );
 
     // Descrizione
-    const descrizione =
-      cleanText(
-        document.querySelector('[data-element="service-description"]')
-          ?.textContent
-      ) || null;
+    const descrizione = cleanText(
+      document.querySelector('[data-element="service-description"]')
+        ?.textContent
+    );
 
     // Come fare
     const comeFareEl = document.querySelector(
@@ -55,10 +53,9 @@ export async function scrapeCIE() {
         cosaServeEl.querySelectorAll("div > ol > li")
       ).map((li) => cleanText(li.textContent));
 
-      const infoAggiuntive =
-        cleanText(
-          cosaServeEl.querySelector("div > p:nth-of-type(2)")?.textContent
-        ) || null;
+      const infoAggiuntive = cleanText(
+        cosaServeEl.querySelector("div > p:nth-of-type(2)")?.textContent
+      );
 
       const validita = Array.from(
         cosaServeEl.querySelectorAll("div:nth-of-type(2) > ul > li")
@@ -72,16 +69,15 @@ export async function scrapeCIE() {
     }
 
     // Quanto costa
-    const quantoCosta =
-      cleanText(document.querySelector("#pr_quantoCosta + div")?.textContent) ||
-      null;
+    const quantoCosta = cleanText(
+      document.querySelector("#pr_quantoCosta + div")?.textContent
+    );
 
     // Tempi e scadenze
-    const tempiEScadenze =
-      cleanText(
-        document.querySelector(".calendar-date-description-content > div")
-          ?.textContent
-      ) || null;
+    const tempiEScadenze = cleanText(
+      document.querySelector(".calendar-date-description-content > div")
+        ?.textContent
+    );
 
     // Contatti
     const areaServizioEl = document.querySelector(
@@ -114,7 +110,7 @@ export async function scrapeCIE() {
 
         const pecSpan = spans.find((span) => span.textContent.includes("PEC"));
         if (pecSpan) {
-          pec = cleanText(pecSpan.querySelector("a")?.textContent) || null;
+          pec = cleanText(pecSpan.querySelector("a")?.textContent);
         }
       }
 
