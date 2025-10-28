@@ -1,8 +1,8 @@
-import { CambioNomeECognome } from "@/types/cambio-nome-e-cognome";
+import { CambioNomeEOCognome } from "@/types/cambio-nome-eo-cognome";
 import { createJSON } from "@/utils/create-json";
 import puppeteer from "puppeteer";
 
-export async function scrapeCambioNomeECognome() {
+export async function scrapeCambioNomeEOCognome() {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
@@ -11,7 +11,7 @@ export async function scrapeCambioNomeECognome() {
 
   await page.goto(url);
 
-  const cambioNomeECognome: CambioNomeECognome = await page.evaluate(() => {
+  const cambioNomeEOCognome: CambioNomeEOCognome = await page.evaluate(() => {
     function cleanText(text?: string | null) {
       if (!text) return null;
 
@@ -108,11 +108,11 @@ export async function scrapeCambioNomeECognome() {
   });
 
   await createJSON(
-    cambioNomeECognome,
+    cambioNomeEOCognome,
     "./src/data/services",
-    "cambio-nome-e-cognome"
+    "cambio-nome-eo-cognome"
   );
   await browser.close();
 
-  return cambioNomeECognome;
+  return cambioNomeEOCognome;
 }

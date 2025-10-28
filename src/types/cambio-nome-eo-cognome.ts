@@ -1,4 +1,4 @@
-export type CambioNomeECognome = {
+export type CambioNomeEOCognome = {
   servizio: string | null;
   descrizione: string | null;
   comeFare: string | null;
