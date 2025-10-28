@@ -55,5 +55,10 @@ export async function buildAccessoCivicoSempliceFAQ(
     });
   }
 
-  await createJSON(faq, "./src/data/faq", "accesso-civico-semplice");
+  const output = {
+    servizio: AccessoCivicoSemplice.servizio,
+    faq,
+  };
+
+  await createJSON(output, "./src/data/faq", "accesso-civico-semplice");
 }

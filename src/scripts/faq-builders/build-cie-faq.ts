@@ -90,5 +90,10 @@ export async function buildCartaIdentitaElettronicaFAQ(
     });
   }
 
-  await createJSON(faq, "./src/data/faq", "carta-identita-elettronica");
+  const output = {
+    servizio: cie.servizio,
+    faq,
+  };
+
+  await createJSON(output, "./src/data/faq", "carta-identita-elettronica");
 }

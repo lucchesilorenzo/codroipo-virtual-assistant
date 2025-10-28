@@ -55,5 +55,10 @@ export async function buildAvvisoDiAccertamentoFAQ(
     });
   }
 
-  await createJSON(faq, "./src/data/faq", "avviso-di-accertamento");
+  const output = {
+    servizio: avvisoDiAccertamento.servizio,
+    faq,
+  };
+
+  await createJSON(output, "./src/data/faq", "avviso-di-accertamento");
 }

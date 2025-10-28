@@ -8,7 +8,7 @@ export async function buildCentriEstiviPerMinoriFAQ(
 
   if (centriEstiviPerMinori.descrizione) {
     faq.push({
-      domanda: `Che cos'è ${centriEstiviPerMinori.servizio}?`,
+      domanda: `Che cosa sono i ${centriEstiviPerMinori.servizio}?`,
       risposta: centriEstiviPerMinori.descrizione,
     });
   }
@@ -55,5 +55,10 @@ export async function buildCentriEstiviPerMinoriFAQ(
     });
   }
 
-  await createJSON(faq, "./src/data/faq", "centri-estivi-per-minori");
+  const output = {
+    servizio: centriEstiviPerMinori.servizio,
+    faq,
+  };
+
+  await createJSON(output, "./src/data/faq", "centri-estivi-per-minori");
 }

@@ -55,5 +55,10 @@ export async function buildCambioNomeEOCognomeFAQ(
     });
   }
 
-  await createJSON(faq, "./src/data/faq", "cambio-nome-eo-cognome");
+  const output = {
+    servizio: cambioNomeEOCognome.servizio,
+    faq,
+  };
+
+  await createJSON(output, "./src/data/faq", "cambio-nome-eo-cognome");
 }
