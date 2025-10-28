@@ -23,53 +23,48 @@ export async function scrapeAccessoSempliceCivile() {
       }
 
       // Servizio
-      const servizio =
-        cleanText(
-          document.querySelector('[data-element="service-title"]')?.textContent
-        ) || null;
+      const servizio = cleanText(
+        document.querySelector('[data-element="service-title"]')?.textContent
+      );
 
       // Descrizione
-      const descrizione =
-        cleanText(
-          document.querySelector('[data-element="service-description"]')
-            ?.textContent
-        ) || null;
+      const descrizione = cleanText(
+        document.querySelector('[data-element="service-description"]')
+          ?.textContent
+      );
 
       // Come fare
-      const comeFare =
-        cleanText(
-          document.querySelector(
-            '[data-element="service-how-to"] > p:nth-of-type(1)'
-          )?.textContent
-        ) || null;
+      const comeFare = cleanText(
+        document.querySelector(
+          '[data-element="service-how-to"] > p:nth-of-type(1)'
+        )?.textContent
+      );
 
       // Cosa serve
-      const cosaServe =
-        cleanText(
-          document.querySelector(
-            '[data-element="service-needed"] > div > p:nth-of-type(1)'
-          )?.textContent
-        ) || null;
+      const cosaServe = cleanText(
+        document.querySelector(
+          '[data-element="service-needed"] > div > p:nth-of-type(1)'
+        )?.textContent
+      );
 
       // Quanto costa
-      const quantoCosta =
-        cleanText(
-          document.querySelector("#pr_quantoCosta + div > p")?.textContent
-        ) || null;
+      const quantoCosta = cleanText(
+        document.querySelector("#pr_quantoCosta + div > p")?.textContent
+      );
 
       // Tempi e scadenze
-      const tempiEScadenze =
-        cleanText(
-          document.querySelector(".calendar-date-description-content > div")
-            ?.textContent
-        ) || null;
+      const tempiEScadenze = cleanText(
+        document.querySelector(".calendar-date-description-content > div")
+          ?.textContent
+      );
 
       // Contatti
       let contatti = null;
 
-      const telefono =
+      const telefono = cleanText(
         document.querySelector("#contatti p.text-ellips-custom.mt-0.mb-2 > a")
-          ?.textContent || null;
+          ?.textContent
+      );
 
       const aperturaPubblicaEl = Array.from(
         document.querySelectorAll("div.my-1")
