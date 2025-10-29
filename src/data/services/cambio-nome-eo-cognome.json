@@ -1,0 +1,13 @@
+{
+  "servizio": "Cambio di nome e/o cognome",
+  "descrizione": "L'interessato al cambiamento del proprio nome e/o cognome deve rivolgersi alla Prefettura. Una volta ottenuto il decreto della Prefettura lo consegna al Comune per i successivi adempimenti.",
+  "comeFare": "Anticipazione del Decreto via Pec comune.codroipo@certgov.fvg.it e successivamente a mano (consegna originale) previo appuntamento.",
+  "cosaServe": "Una volta ottenuto il relativo decreto, consegnato dalla Prefettura, l'interessato deve presentarlo al Comune e chiedere la sua trascrizione nei registri di stato civile L'ufficio provvederà alla trascrizione del decreto e all'aggiornamento dei dati negli archivi di stato civile e anagrafici.",
+  "quantoCosta": "nessun costo previsto",
+  "tempiEScadenze": "Entro 30 giorni",
+  "contatti": {
+    "telefono": "+390432824500",
+    "aperturaAlPubblico": "Lunedì: 9:30 - 12:30 Martedì: 8:30 - 12:30 Mercoledì: 9:30 - 12:30 /  16:00 - 18:15 / Giovedì: 9:30 - 12:30 Venerdì: 9:30 - 12:30",
+    "aperturaSuAppuntamento": "Lunedì: 9:30 - 12:30 Martedì: 8:30 - 12:30 Mercoledì: 16:00 - 18:15 Giovedì: 9:30 - 12:30 Venerdì: 9:30 - 12:30"
+  }
+}

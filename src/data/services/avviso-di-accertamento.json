@@ -1,0 +1,13 @@
+{
+  "servizio": "Avviso di accertamento ( TASI, IMU, ILIA, TARI )",
+  "descrizione": "Il contribuente che non ha correttamente versato al Comune un tributo riceve una notifica di avviso di accertamento contenente l'ammontare dell'imposta, le sanzioni irrogate e gli interessi dovuti.",
+  "comeFare": "L'avviso viene notificato ai contribuenti che presumibilmente hanno evaso le tasse.",
+  "cosaServe": "L'avviso di accertamento è un atto che viene notificato al contribuente quando, a seguito di verifiche, emergono inadempienze relative ai tributi TASI, IMU, ILIA, TARI. L'atto contiene l'ammontare dell'imposta, le sanzioni irrogate e gli interessi.",
+  "quantoCosta": "Dipende all'importo dovuto.",
+  "tempiEScadenze": "Entro 60 giorni",
+  "contatti": {
+    "telefono": "+390432824500",
+    "aperturaAlPubblico": "Lunedì: 9:30 - 12:30 /  16:00 - 18:15 / Martedì: 8:30 - 12:30 Mercoledì: 9:30 - 12:30 /  16:00 - 18:15 / Giovedì: 9:30 - 12:30 Venerdì: 9:30 - 12:30",
+    "aperturaSuAppuntamento": "Lunedì: 9:30 - 12:30 Martedì: 8:30 - 12:30 Mercoledì: 9:30 - 12:30 Giovedì: 9:30 - 12:30 Venerdì: 9:30 - 12:30"
+  }
+}

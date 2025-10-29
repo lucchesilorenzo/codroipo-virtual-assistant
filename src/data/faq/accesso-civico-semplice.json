@@ -1,0 +1,33 @@
+{
+  "servizio": "Accesso civico semplice",
+  "faq": [
+    {
+      "domanda": "Potresti fornire una breve descrizione sull'Accesso civico semplice?",
+      "risposta": "E' il diritto di chiedere ed ottenere documenti, informazioni o dati che le pubbliche amministrazioni hanno l'obbligo di pubblicare sul sito istituzionale."
+    },
+    {
+      "domanda": "Come posso richiedere l'Accesso civico semplice?",
+      "risposta": "La richiesta può essere trasmessa tramite posta elettronica certificata (PEC) all'indirizzo: comune.codroipo@certgov.fvg.it o con consegna diretta presso l'Ufficio Protocollo del Comune.La presentazione della richiesta deve essere sempre accompagnata dalla copia cartacea o dalla scansione digitale del documento di identità, fatta eccezione nel caso venga effettuata tramite posta elettronica certificata (PEC)."
+    },
+    {
+      "domanda": "Quanto costa l'Accesso civico semplice?",
+      "risposta": "Non sono previsti costi per la presentazione dell'istanza"
+    },
+    {
+      "domanda": "Quali sono i tempi di rilascio dell'Accesso civico semplice?",
+      "risposta": "Entro 30 giorni"
+    },
+    {
+      "domanda": "Qual è il numero di telefono per avere più informazioni sull'Accesso civico semplice?",
+      "risposta": "+390432824500"
+    },
+    {
+      "domanda": "Quali sono gli orari di apertura al pubblico per l'Accesso civico semplice?",
+      "risposta": "Lunedì: 9:30 - 12:30 /  16:00 - 18:15 / Martedì: 8:30 - 12:30 Mercoledì: 9:30 - 12:30 /  16:00 - 18:15 / Giovedì: 9:30 - 12:30 Venerdì: 9:30 - 12:30"
+    },
+    {
+      "domanda": "Quali sono gli orari su appuntamento per l'Accesso civico semplice?",
+      "risposta": "Lunedì: 9:30 - 12:30 Martedì: 8:30 - 12:30 Mercoledì:  16:00 - 18:15 Giovedì: 9:30 - 12:30 Venerdì: 9:30 - 12:30"
+    }
+  ]
+}

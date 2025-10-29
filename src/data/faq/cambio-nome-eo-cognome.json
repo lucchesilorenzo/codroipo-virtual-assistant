@@ -1,0 +1,33 @@
+{
+  "servizio": "Cambio di nome e/o cognome",
+  "faq": [
+    {
+      "domanda": "Potresti fornire una breve descrizione del Cambio di nome e/o cognome?",
+      "risposta": "L'interessato al cambiamento del proprio nome e/o cognome deve rivolgersi alla Prefettura. Una volta ottenuto il decreto della Prefettura lo consegna al Comune per i successivi adempimenti."
+    },
+    {
+      "domanda": "Come posso richiedere il Cambio di nome e/o cognome?",
+      "risposta": "Anticipazione del Decreto via Pec comune.codroipo@certgov.fvg.it e successivamente a mano (consegna originale) previo appuntamento."
+    },
+    {
+      "domanda": "Quanto costa il Cambio di nome e/o cognome?",
+      "risposta": "nessun costo previsto"
+    },
+    {
+      "domanda": "Quali sono i tempi di rilascio del Cambio di nome e/o cognome?",
+      "risposta": "Entro 30 giorni"
+    },
+    {
+      "domanda": "Qual è il numero di telefono per avere più informazioni sul Cambio di nome e/o cognome?",
+      "risposta": "+390432824500"
+    },
+    {
+      "domanda": "Quali sono gli orari di apertura al pubblico per il Cambio di nome e/o cognome?",
+      "risposta": "Lunedì: 9:30 - 12:30 Martedì: 8:30 - 12:30 Mercoledì: 9:30 - 12:30 /  16:00 - 18:15 / Giovedì: 9:30 - 12:30 Venerdì: 9:30 - 12:30"
+    },
+    {
+      "domanda": "Quali sono gli orari su appuntamento per il Cambio di nome e/o cognome?",
+      "risposta": "Lunedì: 9:30 - 12:30 Martedì: 8:30 - 12:30 Mercoledì: 16:00 - 18:15 Giovedì: 9:30 - 12:30 Venerdì: 9:30 - 12:30"
+    }
+  ]
+}

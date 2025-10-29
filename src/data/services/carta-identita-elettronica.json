@@ -1,0 +1,28 @@
+{
+  "servizio": "Carta Identità Elettronica (C.I.E. - CIE)",
+  "descrizione": "Il cittadino può chiedere il primo rilascio o il rinnovo della Carta d'Identità Elettronica (C.I.E.) al Comune di residenza o dimora.La consegna avviene entro sei giorni lavorativi dalla data della richiesta a cura del Ministero dell'Interno.Viene inviata al domicilio o ritirata presso il Comune",
+  "comeFare": "Il cittadino deve presentarsi di persona, con la documentazione richiesta, solo su appuntamento da prenotare tramite una delle seguenti modalità:\n1. on-line su questo sito cliccando su  PRENOTA UN APPUNTAMENTO e scegliere sportello anagrafe (verificare poi quale dei due sportelli ha date disponibili più consone con le vostre esigenze)\n2. oppure telefonando allo 0432/824500 int. 1/1\nLa carta sarà poi spedita a casa (o a un indirizzo da lui indicato) oppure può essere ritirata in comune.\nUna persona delegata potrà ritirare il documento, solo se al momento della domanda saranno indicate le sue generalità.",
+  "cosaServe": {
+    "requisiti": [
+      "carta d'identità SCADUTA (o denuncia in originale per furto/smarrimento) o in scadenza (il rinnovo può essere chiesto fino a 180 giorni prima della data di scadenza);",
+      "codice fiscale o tessera sanitaria;",
+      "una fototessera aventi le caratteristiche (regole) in allegato;",
+      "copia della ricevuta di pagamento effettuato tramite PAGOPA (OBBLIGATORIO DAL 01/01/2025)."
+    ],
+    "infoAggiuntive": "PER I MINORI, qualora non si presentino allo sportello entrambi i genitori, DEVE ESSERE PRESENTATA LA DICHIARAZIONE DI ASSENSO dell'altro genitore (di quello che non si presenta personalmente allo sportello) sul modello: \"MODELLO MINORI CIE\" (in allegato)  ovvero nulla osta del Giudice Tutelare.In ogni caso, per il rilascio del documento E' SEMPRE NECESSARIA LA PRESENZA DEL MINORE. Il richiedente, genitore di figli minori, dovrà dichiarare di non trovarsi in alcuna delle condizioni ostative al rilascio del documento previste dall'art. 3 della Legge 1185 del 1967, tra le quali rientra l'assenza di provvedimenti giudiziari di inibizione all'espatrio di cui all'art. 3-bis della stessa legge, introdotto dall'art. 20 del D.L. n. 69 del 13 giugno 2023.All'atto della richiesta di emissione della CIE il cittadino può esprimere il consenso/diniego alla donazione degli organi. Il Centro Nazionale Trapianti assicura la gestione di tale informazione. Il rilascio della dichiarazione di volontà relativa alla donazione degli organi è facoltativo. Per maggiori informazioni visita il sito: https://www.trapianti.salute.gov.it/trapianti/homeCnt.jsp",
+    "validita": [
+      "3 anni per i minori di età inferiore a 3 anni;",
+      "5 anni per i minori di età compresa tra 3 e 18 anni;",
+      "10 anni per i maggiorenni."
+    ]
+  },
+  "quantoCosta": "Euro 22,00 per la C.I.E.; Euro 5,42 per la carta d'identità cartacea",
+  "tempiEScadenze": "Entro 6 giorni",
+  "contatti": {
+    "sportello": "Piazza Giuseppe Garibaldi, 81  - 33033  Codroipo",
+    "telefono": "0432/824500",
+    "pec": "comune.codroipo@certgov.fvg.it",
+    "aperturaAlPubblico": "Lunedì: 9:30 - 12:30 Martedì: 8:30 - 12:30 Mercoledì: 9:30 - 12:30 /  16:00 - 18:15 / Giovedì: 9:30 - 12:30 Venerdì: 9:30 - 12:30",
+    "aperturaSuAppuntamento": "Lunedì: 9:30 - 12:30 Martedì: 8:30 - 12:30 Mercoledì:  16:00 - 18:15 Giovedì: 9:30 - 12:30 Venerdì: 9:30 - 12:30"
+  }
+}

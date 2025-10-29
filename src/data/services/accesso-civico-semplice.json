@@ -1,0 +1,13 @@
+{
+  "servizio": "Accesso civico semplice",
+  "descrizione": "E' il diritto di chiedere ed ottenere documenti, informazioni o dati che le pubbliche amministrazioni hanno l'obbligo di pubblicare sul sito istituzionale.",
+  "comeFare": "La richiesta può essere trasmessa tramite posta elettronica certificata (PEC) all'indirizzo: comune.codroipo@certgov.fvg.it o con consegna diretta presso l'Ufficio Protocollo del Comune.La presentazione della richiesta deve essere sempre accompagnata dalla copia cartacea o dalla scansione digitale del documento di identità, fatta eccezione nel caso venga effettuata tramite posta elettronica certificata (PEC).",
+  "cosaServe": "L'accesso civico \"semplice\" è il diritto di chiedere ed ottenere documenti, informazioni o dati che le pubbliche amministrazioni hanno l'obbligo di pubblicare sul sito istituzionale ed è disciplinato dall'art. 5, comma 1, del D.Lgs. 14 marzo 2013, n. 33.",
+  "quantoCosta": "Non sono previsti costi per la presentazione dell'istanza",
+  "tempiEScadenze": "Entro 30 giorni",
+  "contatti": {
+    "telefono": "+390432824500",
+    "aperturaAlPubblico": "Lunedì: 9:30 - 12:30 /  16:00 - 18:15 / Martedì: 8:30 - 12:30 Mercoledì: 9:30 - 12:30 /  16:00 - 18:15 / Giovedì: 9:30 - 12:30 Venerdì: 9:30 - 12:30",
+    "aperturaSuAppuntamento": "Lunedì: 9:30 - 12:30 Martedì: 8:30 - 12:30 Mercoledì:  16:00 - 18:15 Giovedì: 9:30 - 12:30 Venerdì: 9:30 - 12:30"
+  }
+}
