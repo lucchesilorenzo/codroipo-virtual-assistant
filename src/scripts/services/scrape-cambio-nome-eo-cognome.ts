@@ -1,4 +1,4 @@
-import { CambioNomeEOCognome } from "@/types/cambio-nome-eo-cognome";
+import { CambioNomeEOCognome } from "@/types/cambio-nome-eo-cognome-types";
 import { createJSON } from "@/utils/create-json";
 import puppeteer from "puppeteer";
 

@@ -1,4 +1,4 @@
-import { AccessoCivicoSemplice } from "@/types/accesso-civico-semplice";
+import { AccessoCivicoSemplice } from "@/types/accesso-civico-semplice-types";
 import { createJSON } from "@/utils/create-json";
 
 export async function buildAccessoCivicoSempliceFAQ(

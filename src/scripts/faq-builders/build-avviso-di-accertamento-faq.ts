@@ -1,4 +1,4 @@
-import { AvvisoDiAccertamento } from "@/types/avviso-di-accertamento";
+import { AvvisoDiAccertamento } from "@/types/avviso-di-accertamento-types";
 import { createJSON } from "@/utils/create-json";
 
 export async function buildAvvisoDiAccertamentoFAQ(

@@ -1,4 +1,4 @@
-import { CentriEstiviPerMinori } from "@/types/centri-estivi-per-minori";
+import { CentriEstiviPerMinori } from "@/types/centri-estivi-per-minori-types";
 import { createJSON } from "@/utils/create-json";
 
 export async function buildCentriEstiviPerMinoriFAQ(

@@ -1,4 +1,4 @@
-import { CartaIdentitaElettronica } from "@/types/carta-identita-elettronica";
+import { CartaIdentitaElettronica } from "@/types/carta-identita-elettronica-types";
 import { createJSON } from "@/utils/create-json";
 import puppeteer from "puppeteer";
 
