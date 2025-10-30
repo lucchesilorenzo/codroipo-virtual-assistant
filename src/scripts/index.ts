@@ -1,4 +1,4 @@
-import { services } from "./scripts/services";
+import { services } from "./services";
 
 async function main() {
   for (const { service, buildFaq } of services) {
