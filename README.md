@@ -7,7 +7,7 @@ Prototipo di un assistente virtuale per il Comune di Codroipo.
 - **Estrazione automatica dei servizi comunali:** lo script raccoglie e struttura i dati pubblici dal sito del Comune di Codroipo.
 - **Generazione e gestione delle FAQ:** mappatura automatica di domande e risposte relative a ciascun servizio, in formato JSON.
 - **Gestione delle prenotazioni:** integrazione con Google Calendar per verificare la disponibilità di date e orari e creare eventi in modo automatico.
-- **Conferma e promemoria:** simulazione dell’invio di un messaggio di conferma e di un promemoria dopo la prenotazione nella chat dell'assistente.
+- **Conferma e promemoria:** simulazione dell’invio di un messaggio di conferma e di un promemoria dopo aver effettuato la prenotazione.
 
 ## Servizi supportati
 
@@ -47,7 +47,7 @@ code .
 npm install
 ```
 
-3. **Avvia lo script:**
+3. **Avvia lo script di scraping:**
 
 ```bash
 npm run scrape
