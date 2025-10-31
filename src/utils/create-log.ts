@@ -5,5 +5,5 @@ export async function createLog(data: string, dir: string, fileName: string) {
   await fs.mkdir(dir, { recursive: true });
 
   const filePath = path.join(dir, `${fileName}.log`);
-  await fs.appendFile(filePath, data);
+  await fs.appendFile(filePath, data, "utf8");
 }
