@@ -19,17 +19,20 @@ Attualmente vengono estratti e gestiti i seguenti servizi del Comune di Codroipo
 - [Avviso di accertamento (TASI, IMU, ILIA, TARI)](https://www.comune.codroipo.ud.it/it/servizi-224003/avviso-di-accertamento-tasi-imu-ilia-tari-241582)
 - [Centri estivi per minori (3/6 anni)](https://www.comune.codroipo.ud.it/it/servizi-224003/centri-estivi-per-minori-36-anni-241652)
 
-## Stack Tecnologico
+## Tecnologie
 
 - [Node.js](https://nodejs.org/en)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Puppeteer](https://pptr.dev/) per lo scraping
+- [Node Cron](https://nodecron.com/) per la gestione dei cron job
+- [date-fns](https://date-fns.org/) per la gestione delle date
 - [Vapi](https://vapi.ai/) per la parte vocale / AI
 
 ## Prerequisiti
 
 - [Node.js (24+)](https://nodejs.org/en)
 - [Git](https://git-scm.com/)
+- [ngrok](https://ngrok.com/)
 
 ## Installazione
 
@@ -47,8 +50,22 @@ code .
 npm install
 ```
 
-3. **Avvia lo script di scraping:**
+## Comandi disponibili
+
+**Esegui lo scraping dei servizi comunali:**
 
 ```bash
 npm run scrape
+```
+
+**Avvia il cron job per i promemoria:**
+
+```bash
+npm run cron
+```
+
+**Avvia il server di sviluppo:**
+
+```bash
+npm run dev
 ```
