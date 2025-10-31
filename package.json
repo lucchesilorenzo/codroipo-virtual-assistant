@@ -4,11 +4,14 @@
   "description": "Prototipo di un assistente virtuale per il Comune di Codroipo.",
   "scripts": {
     "scrape": "node -r ts-node/register --watch ./src/scripts/index.ts",
+    "cron": "node -r ts-node/register --watch ./src/jobs/reminder.ts",
     "dev": "node -r ts-node/register --watch ./src/server.ts"
   },
   "author": "Lorenzo Lucchesi",
   "dependencies": {
+    "date-fns": "^4.1.0",
     "express": "^5.1.0",
+    "node-cron": "^4.2.1",
     "puppeteer": "^24.26.1"
   },
   "devDependencies": {
